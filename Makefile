@@ -5,7 +5,7 @@
 ## Login   <fave_r@epitech.net>
 ##
 ## Started on  Fri Feb 28 20:51:16 2014 romaric
-## Last update Fri Feb 28 20:51:19 2014 romaric
+## Last update Fri Feb 28 21:18:42 2014 romaric
 ##
 
 CC=		clang
@@ -17,7 +17,8 @@ CFLAGS=		-Wextra -Wall -Werror -ggdb3 -g3
 NAME=		Sudoki-Bi
 
 SRCS=		char.c \
-		xfunction.c
+		xfunction.c \
+		main.c
 
 OBJS=		$(SRCS:.c=.o)
 
