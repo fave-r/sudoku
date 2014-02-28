@@ -1,11 +1,11 @@
 /*
-** minishell.h for minishell in /home/blackbird/work/minishell/1
+** sudoku.h for sudoku in /home/blackbird/work/Rush2sudoku/sudoku
 **
 ** Made by romaric
 ** Login   <fave_r@epitech.net>
 **
-** Started on  Wed Dec 18 14:13:39 2013 romaric
-** Last update Fri Feb 28 20:25:18 2014 romaric
+** Started on  Fri Feb 28 20:46:48 2014 romaric
+** Last update Fri Feb 28 20:46:52 2014 romaric
 */
 
 #ifndef __SUDOKU__
@@ -15,27 +15,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
-#include <sys/wait.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 typedef struct  s_word
 {
-  int   nbwords;
-  int   i;
-  char  **strpar;
-  char  *ptr;
 }               t_word;
 
-typedef struct	s_mainini
-{
-  char  *buff;
-  char  **str;
-  char  **envcpy;
-  int   pathi;
-  char  *path;
-  char  **pathsep;
-  char  *cmd;
-}		t_mainini;
-
-void    aux_man(char ***pathsep, char **path);
+int     xopen(const char *pathname, int flags);
+ssize_t xread(int fd, void *buf, size_t count);
+void    *xmalloc(size_t n);
+int     my_putstr(char *str, int op);
 
 #endif
