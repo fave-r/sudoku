@@ -5,7 +5,7 @@
 ** Login   <alex-odet@epitech.net>
 **
 ** Started on  Fri Feb 28 20:55:52 2014 Alexandre Odet
-** Last update Fri Feb 28 21:20:22 2014 romaric
+** Last update Fri Feb 28 21:22:11 2014 romaric
 */
 
 #include "sudoku.h"
@@ -31,7 +31,7 @@ int	main(int ac, char **av)
 
 void	my_loop(int fd)
 {
-  char	buffer[4096];
+  char	buffer[BUFF_SIZE];
 
   while ((xread(fd, buffer, BUFF_SIZE)))
     {
