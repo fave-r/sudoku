@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 09:34:03 2014 romaric
-** Last update Sat Mar  1 11:14:05 2014 romaric
+** Last update Sat Mar  1 13:17:12 2014 romaric
 */
 
 #include "sudoku.h"
@@ -21,10 +21,10 @@ void	my_loop(int fd)
   char	buffer[BUFF_SIZE];
   char	*str;
 
-  str = xmalloc(144 * sizeof(char));
+  str = xmalloc(145 * sizeof(char));
   while ((xread(fd, buffer, BUFF_SIZE)))
-    {
       strcpy(str, buffer);
-    }
+  str[strlen(str) + 1] = '\0';
+  str = epur_str(str);
   printf("%s", str);
 }

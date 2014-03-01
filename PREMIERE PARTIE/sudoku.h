@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Fri Feb 28 20:46:48 2014 romaric
-** Last update Sat Mar  1 11:09:17 2014 romaric
+** Last update Sat Mar  1 13:04:58 2014 romaric
 */
 
 #ifndef __SUDOKU__
@@ -28,7 +28,7 @@ typedef struct  s_word
 int     xopen(const char *pathname, int flags);
 ssize_t xread(int fd, void *buf, size_t count);
 void    *xmalloc(size_t n);
-int     my_putstr(char *str, int op);
+char	*epur_str(char *str);
 void    my_loop(int fd);
 
 #endif

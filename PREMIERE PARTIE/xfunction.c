@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Fri Feb 28 20:45:38 2014 romaric
-** Last update Fri Feb 28 20:45:43 2014 romaric
+** Last update Sat Mar  1 13:06:53 2014 romaric
 */
 
 #include "sudoku.h"
@@ -17,7 +17,7 @@ int	xopen(const char *pathname, int flags)
   len = open(pathname, flags);
   if (len == -1)
     {
-      my_putstr("open fail.\n", 2);
+      fprintf(stderr, "open fail.\n");
       exit(EXIT_FAILURE);
     }
   return (len);
@@ -30,7 +30,7 @@ ssize_t	xread(int fd, void *buf, size_t count)
   len = read(fd, buf, count);
   if (len == -1)
     {
-      my_putstr("read fail.\n", 2);
+      fprintf(stderr, "read fail.\n");
       exit(EXIT_FAILURE);
     }
   return (len);
@@ -44,7 +44,7 @@ void	*xmalloc(size_t n)
   if (mal == NULL)
     {
       free(mal);
-      my_putstr("malloc fail.\n", 2);
+      fprintf(stderr, "malloc fail.\n");
       return (NULL);
     }
   return (mal);
