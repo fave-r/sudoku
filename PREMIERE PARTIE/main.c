@@ -5,27 +5,14 @@
 ** Login   <alex-odet@epitech.net>
 **
 ** Started on  Fri Feb 28 20:55:52 2014 Alexandre Odet
-** Last update Fri Feb 28 21:22:11 2014 romaric
+** Last update Sat Mar  1 09:32:11 2014 Alexandre Odet
 */
 
 #include "sudoku.h"
 
-int	main(int ac, char **av)
+int	main()
 {
-  int	fd;
-
-  if (ac == 1)
-    {
-      fprintf(stderr, "Usage :");
-      fprintf(stderr, "%s", av[0]);
-      fprintf(stderr, " map_to_resolve\n");
-      return (0);
-    }
-  else
-    {
-      fd = xopen(av[1], O_RDONLY);
-      my_loop(fd);
-    }
+  my_loop(0);
   return (0);
 }
 
