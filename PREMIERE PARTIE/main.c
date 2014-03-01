@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 09:34:03 2014 romaric
-** Last update Sat Mar  1 19:23:40 2014 Alexandre Odet
+** Last update Sat Mar  1 23:17:08 2014 Alexandre Odet
 */
 
 #include "sudoku.h"
@@ -20,11 +20,13 @@ void	my_loop(int fd)
 {
   char	buffer[BUFF_SIZE];
   char	*str;
+  char	*new;
 
   str = xmalloc(145 * sizeof(char));
   while ((xread(fd, buffer, BUFF_SIZE)))
     strncpy(str, buffer, strlen(buffer));
   fill_map(str);
-  if (good(str, 21))
-    printf("%s", str);
+  if((new = epur_str(str)))
+    if (good(new, 21))
+      printf("%s", str);
 }
