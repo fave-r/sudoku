@@ -5,49 +5,53 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 11:29:26 2014 romaric
-** Last update Sat Mar  1 14:16:55 2014 romaric
+** Last update Sat Mar  1 15:00:09 2014 romaric
 */
 
-int	online(char nbr, int grille[9][9], int x)
+#include "sudoku.h"
+
+int	online(char nbr, char *str, int x)
 {
   int	i;
 
   i = -1;
   while (++i < 9)
     {
-      if (grille[x][i] == nbr)
+      if (str[doble(x,i)] == nbr)
 	return (0);
       return (1);
     }
+  return (0);
 }
 
-int	oncolumn(int k, int grille[9][9], int j)
+int	oncolumn(char nbr, char *str, int j)
 {
   int	i;
 
   i = -1;
   while (++i < 9)
     {
-      if (grille[i][j] == k)
+      if (str[doble(i,j)] == nbr)
 	return (0);
       return (1);
     }
+  return (0);
 }
 
-int	onsquare(int k, int grille[9][9], int i, int j)
+int	onsquare(char nbr, char *str, int i, int j)
 {
-  int	x = 3*(i/3);
-  int	y = 3*(j/3);
+  int	x = 3 * (i / 3);
+  int	y = 3 * (j / 3);
 
-  while (i = x)
+  i = x;
+  j = y;
+  while (i < (x + 3))
     {
-      i < x + 3;
       i++;
-      while (j = y)
+      while (j < (y + 3))
 	{
-	  j < y + 3;
 	  j++;
-	  if (grille[i][j] == k)
+	  if (str[doble(i,j)] == nbr)
 	    return (0);
 	}
     }
