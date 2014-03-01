@@ -5,8 +5,10 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 12:45:52 2014 romaric
-** Last update Sat Mar  1 14:01:49 2014 romaric
+** Last update Sat Mar  1 14:05:31 2014 romaric
 */
+
+
 
 int	good(char *str, int where)
 {
@@ -27,7 +29,6 @@ int	good(char *str, int where)
 	  && absentSurBloc(k,grille,x,y))
         {
 	  grille[x][y] = k;
-
 	  if (good(grille, position+1))
 	    return (1);
 	}
