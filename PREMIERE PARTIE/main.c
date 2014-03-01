@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 09:34:03 2014 romaric
-** Last update Sat Mar  1 10:58:28 2014 Alexandre Odet
+** Last update Sat Mar  1 11:14:05 2014 romaric
 */
 
 #include "sudoku.h"
@@ -26,5 +26,5 @@ void	my_loop(int fd)
     {
       strcpy(str, buffer);
     }
-  printf("%s\n", str);
+  printf("%s", str);
 }
