@@ -5,20 +5,33 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 12:45:52 2014 romaric
-** Last update Sat Mar  1 13:15:32 2014 romaric
+** Last update Sat Mar  1 14:01:49 2014 romaric
 */
 
-int	good(int grille[9][9], int where)
+int	good(char *str, int where)
 {
-  int i = where/9;
-  int j = where%9;
+  int	x;
+  int	y;
+  int	i;
 
-  // Si on est à la 82e case (on sort du tableau)
-  if (where == 132)
+  x = where / 9;
+  y = where % 9;
+  i = -1;
+  if (where == 9*9)
     return (1);
-  // On récupère les coordonnées de la case
-  // Si la case n'est pas vide, on passe à la suivante (appel récursif)
-  if (grille[i][j] != 0)
-    return good(grille, where+1);
-  // A implémenter : backtracking
+  if (grille[x][y] != 0)
+    return (good(grille, where + 1));
+  while (++i < 9)
+    {
+      if (absentSurLigne(k,grille,x) && absentSurColonne(k,grille,y)
+	  && absentSurBloc(k,grille,x,y))
+        {
+	  grille[x][y] = k;
+
+	  if (good(grille, position+1))
+	    return (1);
+	}
+      grille[x][j] = 0;
+      return (0);
+    }
 }
