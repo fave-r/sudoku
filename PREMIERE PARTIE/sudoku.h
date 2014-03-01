@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Fri Feb 28 20:46:48 2014 romaric
-** Last update Sat Mar  1 14:51:42 2014 romaric
+** Last update Sat Mar  1 19:23:04 2014 Alexandre Odet
 */
 
 #ifndef __SUDOKU__
@@ -35,5 +35,6 @@ int     online(char nbr, char *str, int x);
 int     oncolumn(char nbr, char *str, int j);
 int     onsquare(char nbr, char *str, int i, int j);
 int	good(char *str, int where);
+char	*fill_map(char *str);
 
 #endif

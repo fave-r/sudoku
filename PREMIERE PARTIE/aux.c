@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 11:29:26 2014 romaric
-** Last update Sat Mar  1 18:34:09 2014 romaric
+** Last update Sat Mar  1 19:43:23 2014 Alexandre Odet
 */
 
 #include "sudoku.h"
@@ -28,6 +28,7 @@ int	oncolumn(char nbr, char *str, int j)
 {
   int	i;
 
+  fprintf(stderr, "%d -> %c %c %c %c %c %c %c %c %c\n", j, str[doble(0, j)], str[doble(1, j)], str[doble(2, j)], str[doble(3, j)], str[doble(4, j)], str[doble(5, j)], str[doble(6, j)], str[doble(7, j)], str[doble(8, j)]);
   i = -1;
   while (++i < 9)
     {

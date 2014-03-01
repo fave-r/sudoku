@@ -5,7 +5,7 @@
 ## Login   <fave_r@epitech.net>
 ##
 ## Started on  Fri Feb 28 20:51:16 2014 romaric
-## Last update Sat Mar  1 14:48:51 2014 romaric
+## Last update Sat Mar  1 18:53:12 2014 Alexandre Odet
 ##
 
 CC=		clang
@@ -18,7 +18,6 @@ NAME=		sudoki-bi
 
 SRCS=		xfunction.c \
 		main.c \
-		doble.c \
 		calc.c \
 		aux.c
 
