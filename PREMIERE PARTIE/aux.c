@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 11:29:26 2014 romaric
-** Last update Sat Mar  1 12:03:03 2014 romaric
+** Last update Sat Mar  1 14:16:55 2014 romaric
 */
 
 int	online(char nbr, int grille[9][9], int x)

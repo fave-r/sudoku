@@ -5,10 +5,8 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 12:45:52 2014 romaric
-** Last update Sat Mar  1 14:05:31 2014 romaric
+** Last update Sat Mar  1 14:17:27 2014 romaric
 */
-
-
 
 int	good(char *str, int where)
 {
@@ -25,8 +23,8 @@ int	good(char *str, int where)
     return (good(grille, where + 1));
   while (++i < 9)
     {
-      if (absentSurLigne(k,grille,x) && absentSurColonne(k,grille,y)
-	  && absentSurBloc(k,grille,x,y))
+      if (online(k,grille,x) && oncolumn(k,grille,y)
+	  && onsquare(k,grille,x,y))
         {
 	  grille[x][y] = k;
 	  if (good(grille, position+1))
