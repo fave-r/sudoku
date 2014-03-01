@@ -1,31 +1,18 @@
 /*
-** main.c for main in /home/alex-odet/work/sudoku
+** main.c for sudoku in /home/blackbird/work/Rush2sudoku/sudoku/PREMIERE PARTIE
 **
-** Made by Alexandre Odet
-** Login   <alex-odet@epitech.net>
+** Made by romaric
+** Login   <fave_r@epitech.net>
 **
-** Started on  Fri Feb 28 20:55:52 2014 Alexandre Odet
-** Last update Fri Feb 28 22:18:32 2014 romaric
+** Started on  Sat Mar  1 09:34:03 2014 romaric
+** Last update Sat Mar  1 09:34:06 2014 romaric
 */
 
 #include "sudoku.h"
 
-int	main(int ac, char **av)
+int	main()
 {
-  int	fd;
-
-  if (ac == 1)
-    {
-      fprintf(stderr, "Usage :");
-      fprintf(stderr, "%s", av[0]);
-      fprintf(stderr, " map_to_resolve\n");
-      return (0);
-    }
-  else
-    {
-      fd = xopen(av[1], O_RDONLY);
-      my_loop(fd);
-    }
+  my_loop(0);
   return (0);
 }
 
