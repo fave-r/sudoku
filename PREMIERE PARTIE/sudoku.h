@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Fri Feb 28 20:46:48 2014 romaric
-** Last update Fri Feb 28 21:21:04 2014 romaric
+** Last update Sat Mar  1 09:57:49 2014 romaric
 */
 
 #ifndef __SUDOKU__
@@ -19,7 +19,7 @@
 #include <fcntl.h>
 #include <string.h>
 
-#define BUFF_SIZE 4096
+#define BUFF_SIZE 144
 
 typedef struct  s_word
 {

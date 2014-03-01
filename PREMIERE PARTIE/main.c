@@ -5,23 +5,26 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 09:34:03 2014 romaric
-** Last update Sat Mar  1 09:50:36 2014 romaric
+** Last update Sat Mar  1 09:58:18 2014 romaric
 */
 
 #include "sudoku.h"
 
 int	main()
 {
-  my_loop(int fd);
+  my_loop(0);
   return (0);
 }
 
 void	my_loop(int fd)
 {
   char	buffer[BUFF_SIZE];
+  char	*str;
 
+  str = xmalloc(144 * sizeof(char));
   while ((xread(fd, buffer, BUFF_SIZE)))
     {
-      printf("J'ai win\n");
+      strcpy(str, buffer);
     }
+  printf("%s", str);
 }
