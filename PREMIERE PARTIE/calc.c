@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 12:45:52 2014 romaric
-** Last update Sat Mar  1 14:51:30 2014 romaric
+** Last update Sat Mar  1 18:34:13 2014 romaric
 */
 
 #include "sudoku.h"
@@ -16,14 +16,14 @@ int	good(char *str, int where)
   int	y;
   int	i;
 
-  x = where / 9;
-  y = where % 9;
+  x = where / 20;
+  y = where % 20;
   i = 1;
-  if (where == 9*9)
+  if (where == 243)
     return (1);
   if (str[doble(x,y)] != 0)
     return (good(str, where + 1));
-  while (i <= 9)
+  while (i <= 12)
     {
       if (online(i,str,x) && oncolumn(i,str,y)
 	  && onsquare(i,str,x,y))
