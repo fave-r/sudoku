@@ -5,14 +5,14 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 09:34:03 2014 romaric
-** Last update Sat Mar  1 09:34:06 2014 romaric
+** Last update Sat Mar  1 09:50:36 2014 romaric
 */
 
 #include "sudoku.h"
 
 int	main()
 {
-  my_loop(0);
+  my_loop(int fd);
   return (0);
 }
 
