@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Fri Feb 28 20:46:48 2014 romaric
-** Last update Sun Mar  2 17:18:37 2014 romaric
+** Last update Sun Mar  2 17:31:38 2014 Alexandre Odet
 */
 
 #ifndef __SUDOKU__
@@ -21,9 +21,15 @@
 
 #define BUFF_SIZE 231
 
-typedef struct  s_word
+typedef struct  s_sud
 {
-}               t_word;
+  char	buffer[BUFF_SIZE];
+  char	*str;
+  int	i;
+  int	**map;
+  int	x;
+  int	k;
+}               t_sud;
 
 int     xopen(const char *pathname, int flags);
 ssize_t xread(int fd, void *buf, size_t count);
