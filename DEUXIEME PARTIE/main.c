@@ -5,12 +5,10 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 09:34:03 2014 romaric
-** Last update Sun Mar  2 18:51:04 2014 Alexandre Odet
+** Last update Sun Mar  2 19:17:01 2014 romaric
 */
 
 #include "sudoku.h"
-
-void	print_tab(int **map);
 
 int	main()
 {
@@ -18,16 +16,36 @@ int	main()
   return (0);
 }
 
+void	print_map(t_sud *p)
+{
+  if (p->len != 0)
+    printf("####################\n");
+  printf("|------------------|\n");
+  while (++p->i < 9)
+    {
+      p->x = -1;
+      printf("| ");
+      while (++p->x < 9)
+	{
+	  printf("%d", p->map[p->i][p->x]);
+	  if (p->x / 8 == 0)
+	    printf(" ");
+	}
+      printf("|\n");
+    }
+  printf("|------------------|\n");
+  p->len++;
+}
+
 void	my_loop(int fd)
 {
   t_sud	p;
-  int	len;
 
   p.k = -1;
   p.map = xmalloc(sizeof(int *) * 9);
-  while(++p.k < 9)
+  while (++p.k < 9)
     p.map[p.k] = xmalloc(sizeof(int) * 9);
-  len = 0;
+  p.len = 0;
   while ((xread(fd, p.buffer, BUFF_SIZE)))
     {
       p.i = -1;
@@ -35,22 +53,6 @@ void	my_loop(int fd)
       p.str = strndup(p.buffer, 231);
       init_tab(p.str, p.map);
       good(p.map, 0);
-      if (len != 0)
-	printf("####################\n");
-      printf("|------------------|\n");
-      while (++p.i < 9)
-	{
-	  p.x = -1;
-	  printf("| ");
-	  while (++p.x < 9)
-	    {
-	      printf("%d", p.map[p.i][p.x]);
-	      if (p.x / 8 == 0)
-		printf(" ");
-	    }
-	  printf("|\n");
-	}
-      printf("|------------------|\n");
-      len++;
+      print_map(&p);
     }
 }

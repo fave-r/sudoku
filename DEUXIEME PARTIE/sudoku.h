@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Fri Feb 28 20:46:48 2014 romaric
-** Last update Sun Mar  2 17:31:38 2014 Alexandre Odet
+** Last update Sun Mar  2 19:17:08 2014 romaric
 */
 
 #ifndef __SUDOKU__
@@ -29,6 +29,7 @@ typedef struct  s_sud
   int	**map;
   int	x;
   int	k;
+  int	len;
 }               t_sud;
 
 int     xopen(const char *pathname, int flags);
@@ -40,5 +41,6 @@ int     onsquare(int k, int **grille, int i, int j);
 int     oncolumn(int k, int **grille, int j);
 int     online(int k, int **grille, int i);
 void    init_tab(char *map, int **tab);
+void    print_map(t_sud *p);
 
 #endif
