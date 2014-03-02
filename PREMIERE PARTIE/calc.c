@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 12:45:52 2014 romaric
-** Last update Sat Mar  1 23:18:54 2014 Alexandre Odet
+** Last update Sun Mar  2 00:25:03 2014 romaric
 */
 
 #include "sudoku.h"
@@ -29,37 +29,44 @@ int	good(char *str, int where)
   int	x;
   int	y;
   int	i;
-  int	len;
 
-  len = strlen(str);
-  //printf("my_strlen(str) = %d\n", len);
-  x = where / 21;
-  y = where % 21;
+  x = where / 9;
+  y = where % 9;
   i = 1;
-  //  printf("x=%d\ny=%d", x, y);
-  if (where == 231)
+  if (where == 81)
     return (1);
-  if (str[doble(x,y)] != 0)
-    return (good(str, where + 1));
-  while (i <= 9)
+  //if (str[doble(x,y)] != 0 + '0')
+  //return (good(str, where + 1));
+
+  while(where < 82)
     {
-      if (online(i + '0',str, x) && oncolumn(i + '0',str, y)
-	  && onsquare(i - '0',str, x, y))
-        {
-	  str[doble(x, y)] = i;
-	  //printf("doble(x,y) = %d\ni = %d\n", doble(x, y), i);
-	  if (good(str, where + 1))
-	    return (1);
+      if (str[doble(x,y)] != 0 + '0') where += 1;
+  
+      while (i <= 9)
+	{
+	  if ((online(i + '0',str, x)) && (oncolumn(i + '0',str, y))
+	      && (onsquare(i + '0',str, x, y)))
+	    {
+	      str[doble(x, y)] = i + '0';
+	      if (good(str, where + 1))
+		return (1);
+	    }
+	  i++;
 	}
-      i++;
       str[doble(x,y)] = 0;
-      return (0);
+      
     }
+  printf("%s", str);
+
   return (0);
+  
 }
 
 int	doble(int x, int y)
 {
-  //  printf("x = %d\ny = %d\n", x, y);
-  return (21 * y + x);
+  int	len;
+
+  len = (9 * y + x);
+  //  printf("%d\n", len);
+  return(len);
 }

@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Fri Feb 28 20:46:48 2014 romaric
-** Last update Sat Mar  1 19:23:04 2014 Alexandre Odet
+** Last update Sun Mar  2 01:46:32 2014 romaric
 */
 
 #ifndef __SUDOKU__
@@ -36,5 +36,10 @@ int     oncolumn(char nbr, char *str, int j);
 int     onsquare(char nbr, char *str, int i, int j);
 int	good(char *str, int where);
 char	*fill_map(char *str);
+int     estValide(char *grille, int position);
+int     absentSurBloc(int k, char *grille, int i, int j);
+int     absentSurColonne(int k, char *grille, int j);
+int     absentSurLigne(int k, char *grille, int i);
+int     doble(int x, int y);
 
 #endif

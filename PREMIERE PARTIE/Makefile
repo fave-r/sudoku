@@ -5,7 +5,7 @@
 ## Login   <fave_r@epitech.net>
 ##
 ## Started on  Fri Feb 28 20:51:16 2014 romaric
-## Last update Sat Mar  1 23:16:43 2014 Alexandre Odet
+## Last update Sun Mar  2 01:46:19 2014 romaric
 ##
 
 CC=		clang
@@ -18,9 +18,9 @@ NAME=		sudoki-bi
 
 SRCS=		xfunction.c \
 		main.c \
-		calc.c \
 		aux.c \
-		epur_str.c
+		epur_str.c \
+		test.c
 
 OBJS=		$(SRCS:.c=.o)
 
