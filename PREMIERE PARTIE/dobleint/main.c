@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 09:34:03 2014 romaric
-** Last update Sun Mar  2 16:42:52 2014 romaric
+** Last update Sun Mar  2 17:08:22 2014 romaric
 */
 
 #include "sudoku.h"
@@ -35,7 +35,7 @@ void	my_loop(int fd)
   while (++k < 9)
     map[k] = xmalloc(sizeof(int) * 9);
   init_tab(str, map);
-  estValide(map, 0);
+  good(map, 0);
   printf("|------------------|\n");
   while (++i < 9)
     {
