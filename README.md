@@ -1,4 +1,4 @@
 sudoku
 ======
 
-SUDOKU by odet_a &amp; fave_r
+Resolveur de sudoku by odet_a & fave_r
