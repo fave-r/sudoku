@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 09:34:03 2014 romaric
-** Last update Sun Mar  2 03:21:51 2014 romaric
+** Last update Sun Mar  2 12:47:38 2014 Alexandre Odet
 */
 
 #include "sudoku.h"
@@ -32,8 +32,8 @@ void	my_loop(int fd)
     if (estValide(new, 0))
       while (++i <= 81)
 	{
-	  printf("\n%d\t", new[i]);
-	  if (i % 9 == 0)
+	  printf("%d\t", new[i]);
+	  if (i % 8 == 0)
 	    printf("\n");
 	}
 }

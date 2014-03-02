@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 09:34:03 2014 romaric
-** Last update Sun Mar  2 13:38:03 2014 romaric
+** Last update Sun Mar  2 14:09:15 2014 Alexandre Odet
 */
 
 #include "sudoku.h"
@@ -55,11 +55,14 @@ void	my_loop(int fd)
   new = epur_str(str);
   map = strint_to_inttab(new);
   estValide(map, 0);
+  printf("|------------------|\n");
   while (++i < 9)
     {
+      printf("| ");
       while(++x < 9)
-	printf("%d", map[i][x]);
-	x = -1;
-	printf("\n");
+	printf("%d ", map[i][x]);
+      x = -1;
+      printf("\b|\n");
     }
+  printf("|------------------|\n");
 }

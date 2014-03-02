@@ -124,7 +124,8 @@ int     doble(int x, int y)
   int   len;
 
   len = (9 * y + x);
-  if (len == 82)
-    len = 81;
+  //  printf("len = %d\n", len);
+  if (len >= 80)
+    len = 79;
   return(len);
 }

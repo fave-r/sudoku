@@ -5,7 +5,7 @@
 ** Login   <alex-odet@epitech.net>
 **
 ** Started on  Sat Mar  1 23:09:04 2014 Alexandre Odet
-** Last update Sun Mar  2 03:02:46 2014 romaric
+** Last update Sun Mar  2 13:44:06 2014 Alexandre Odet
 */
 
 #include "sudoku.h"
@@ -49,8 +49,6 @@ int	*epur_str(char *str)
 	}
       i++;
     }
-  new[j] = -1;
-  //  print(new);
   return (new);
 }
 
