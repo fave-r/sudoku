@@ -1,90 +1,76 @@
 /*
-** main.c for main in /home/alex-odet/work/Test_SDL
-**
+** main.c for main in /home/alex-odet/work/sudoku/bonus
+** 
 ** Made by Alexandre Odet
 ** Login   <alex-odet@epitech.net>
-**
-** Started on  Sat Mar  1 12:39:03 2014 Alexandre Odet
-** Last update Sat Mar  1 19:53:54 2014 romaric
+** 
+** Started on  Sun Mar  2 21:08:58 2014 Alexandre Odet
+** Last update Sun Mar  2 21:47:11 2014 Alexandre Odet
 */
 
 #include "struct.h"
 
-int		main(int ac, char **av)
+int main(int argc, char *argv[])
 {
-  t_sdl	ptr;
+  int	continuer;
+  SDL_Event event;
 
-  ptr.ecran = NULL;
-  ptr.message = NULL;
-  ptr.screen = NULL;
-  ptr.bg = NULL;
-  if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) == -1)
-    {
-      fprintf(stderr, "SDL init fail %s\n", SDL_GetError());
-      exit(EXIT_FAILURE);
-    }
-  ptr.ecran = xset_video();
-  SDL_WM_SetCaption("Sudoku_bonus", NULL);
-  ptr.img = load_image(av[1]);
-  SDL_FillRect(ptr.ecran, NULL, SDL_MapRGB(ptr.ecran->format, 100, 200, 255));
-  SDL_Flip(ptr.ecran);
-  pause_game();
-  SDL_Quit();
-  return (EXIT_SUCCESS);
-}
-
-void	change_surface(int x, int y, SDL_Surface *src, SDL_Surface *dest)
-{
-  SDL_Rect	offset;
-
-  offset.x = x;
-  offset.y = y;
-  SDL_BlitSurface(src, NULL, dest, &offset);
-}
-
-SDL_Surface	*load_image(char *filename)
-{
-  SDL_Surface	*tmp;
-  SDL_Surface	*opti;
-
-  tmp = NULL;
-  opti = NULL;
-  tmp = SDL_LoadBMP(filename);
-  if (tmp != NULL)
-    {
-      opti = SDL_DisplayFormat(tmp);
-      SDL_FreeSurface(tmp);
-    }
-  return (opti);
-}
-
-SDL_Surface	*xset_video()
-{
-  SDL_Surface	*ecran;
-
-  ecran = NULL;
-ecran = SDL_SetVideoMode(640, 640, 32, SDL_FULLSCREEN | SDL_RESIZABLE | SDL_DOUBLEBUF);
-  if (ecran == NULL)
-    {
-      fprintf(stderr, "Impossible de charger le mode video : %s\n", SDL_GetError());
-      exit(EXIT_FAILURE);
-    }
-  return (ecran);
-}
-
-void		pause_game()
-{
-  int		bool;
-  SDL_Event	event;
-
-  bool = 1;
-  while (bool)
+  SDL_Init(SDL_INIT_EVERYTHING);
+  SDL_WM_SetCaption("Sudoku OpenGL !",NULL);
+  SDL_SetVideoMode(640, 480, 32, SDL_OPENGL);
+  continuer = 1;
+  while (continuer)
     {
       SDL_WaitEvent(&event);
-      switch (event.type)
+      switch(event.type)
 	{
 	case SDL_QUIT:
-	  bool = 0;
+	  continuer = 0;
 	}
+      my_print_map();
     }
+  SDL_Quit();
+  return (0);
+}
+
+void	my_print_map()
+{
+  glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+  glMatrixMode(GL_MODELVIEW);
+  glLoadIdentity();
+  gluLookAt(3,4,2,0,0,0,0,0, 1);
+  glBegin(GL_QUADS);
+  glColor3ub(255,0,0); //face rouge
+  glVertex3d(1,1,1);
+  glVertex3d(1,1,-1);
+  glVertex3d(-1,1,-1);
+  glVertex3d(-1,1,1);
+  glColor3ub(0,255,0); //face verte
+  glVertex3d(1,-1,1);
+  glVertex3d(1,-1,-1);
+  glVertex3d(1,1,-1);
+  glVertex3d(1,1,1);
+  glColor3ub(0,0,255); //face bleue
+  glVertex3d(-1,-1,1);
+  glVertex3d(-1,-1,-1);
+  glVertex3d(1,-1,-1);
+  glVertex3d(1,-1,1);
+  glColor3ub(255,255,0); //face jaune
+  glVertex3d(-1,1,1);
+  glVertex3d(-1,1,-1);
+  glVertex3d(-1,-1,-1);
+  glVertex3d(-1,-1,1);
+  glColor3ub(0,255,255); //face cyan
+  glVertex3d(1,1,-1);
+  glVertex3d(1,-1,-1);
+  glVertex3d(-1,-1,-1);
+  glVertex3d(-1,1,-1);
+  glColor3ub(255,0,255); //face magenta
+  glVertex3d(1,-1,1);
+  glVertex3d(1,1,1);
+  glVertex3d(-1,1,1);
+  glVertex3d(-1,-1,1);
+  glEnd();
+  glFlush();
+  SDL_GL_SwapBuffers();
 }

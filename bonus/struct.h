@@ -5,21 +5,12 @@
 ** Login   <alex-odet@epitech.net>
 ** 
 ** Started on  Sat Mar  1 16:54:11 2014 Alexandre Odet
-** Last update Sat Mar  1 18:21:57 2014 Alexandre Odet
+** Last update Sun Mar  2 21:26:53 2014 Alexandre Odet
 */
 
 #include <SDL/SDL.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
+#include <stdbool.h>
 
-typedef struct	s_sdl
-{
-  SDL_Surface	*ecran;
-  SDL_Surface	*message;
-  SDL_Surface	*bg;
-  SDL_Surface	*screen;
-  SDL_Surface	*img;
-}		t_sdl;
-
-
-void		pause_game();
-SDL_Surface	*xset_video();
-SDL_Surface    	*load_image(char *filename);
+void	my_print_map();
