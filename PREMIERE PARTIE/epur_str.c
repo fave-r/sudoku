@@ -5,10 +5,22 @@
 ** Login   <alex-odet@epitech.net>
 **
 ** Started on  Sat Mar  1 23:09:04 2014 Alexandre Odet
-** Last update Sun Mar  2 02:55:26 2014 Alexandre Odet
+** Last update Sun Mar  2 03:00:31 2014 Alexandre Odet
 */
 
 #include "sudoku.h"
+
+void	print(int *t)
+{
+  int	i;
+
+  i = 0;
+  while (t[i] != -1 && i < 81)
+    {
+      printf("t[i] = %d\n", t[i]);
+      i++;
+    }
+}
 
 int	*epur_str(char *str)
 {
@@ -28,17 +40,17 @@ int	*epur_str(char *str)
       if (str[i] == ' ' && str[i + 1] == ' ')
 	{
 	  new[j] = 0;
-	  printf("first condition new = %d\n", new[j]);
 	  j++;
 	}
       else if (str[i] >= '0' && str[i] <= '9')
 	{
 	  new[j] = atoi(&str[i]);
-	  printf("second condition new = %d\n", new[j]);
 	  j++;
 	}
       i++;
     }
   new[j] = -1;
+  print(new);
   return (new);
 }
+
