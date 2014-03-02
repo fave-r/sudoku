@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 09:34:03 2014 romaric
-** Last update Sun Mar  2 17:32:56 2014 Alexandre Odet
+** Last update Sun Mar  2 18:51:04 2014 Alexandre Odet
 */
 
 #include "sudoku.h"
@@ -21,28 +21,36 @@ int	main()
 void	my_loop(int fd)
 {
   t_sud	p;
+  int	len;
 
-  p.i = -1;
   p.k = -1;
-  while ((xread(fd, p.buffer, BUFF_SIZE)))
-    p.str = strdup(p.buffer);
   p.map = xmalloc(sizeof(int *) * 9);
-  while (++p.k < 9)
+  while(++p.k < 9)
     p.map[p.k] = xmalloc(sizeof(int) * 9);
-  init_tab(p.str, p.map);
-  good(p.map, 0);
-  printf("|------------------|\n");
-  while (++p.i < 9)
+  len = 0;
+  while ((xread(fd, p.buffer, BUFF_SIZE)))
     {
-      p.x = -1;
-      printf("| ");
-      while (++p.x < 9)
+      p.i = -1;
+      p.k = -1;
+      p.str = strndup(p.buffer, 231);
+      init_tab(p.str, p.map);
+      good(p.map, 0);
+      if (len != 0)
+	printf("####################\n");
+      printf("|------------------|\n");
+      while (++p.i < 9)
 	{
-	  printf("%d", p.map[p.i][p.x]);
-	  if (p.x / 8 == 0)
-	    printf(" ");
+	  p.x = -1;
+	  printf("| ");
+	  while (++p.x < 9)
+	    {
+	      printf("%d", p.map[p.i][p.x]);
+	      if (p.x / 8 == 0)
+		printf(" ");
+	    }
+	  printf("|\n");
 	}
-      printf("|\n");
+      printf("|------------------|\n");
+      len++;
     }
-  printf("|------------------|\n");
 }
