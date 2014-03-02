@@ -5,10 +5,12 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 09:34:03 2014 romaric
-** Last update Sun Mar  2 14:09:15 2014 Alexandre Odet
+** Last update Sun Mar  2 15:58:04 2014 Alexandre Odet
 */
 
 #include "sudoku.h"
+
+void	print_tab(int **map);
 
 int	main()
 {
@@ -34,7 +36,28 @@ int	**strint_to_inttab(int *new)
 	  map[i][x] = new[++k];
       x = -1;
     }
+  print_tab(map);
   return (map);
+}
+
+void	print_tab(int **map)
+{
+  int	y;
+  int	x;
+
+  y = 0;
+  while (y < 9)
+    {
+      x = 0;
+      while (x < 9)
+	{
+	  printf("%d", map[y][x]);
+	  x++;
+	}
+      printf("\n");
+      y++;
+    }
+  exit(42);
 }
 
 void	my_loop(int fd)

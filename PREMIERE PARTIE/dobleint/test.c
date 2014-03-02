@@ -1,10 +1,15 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdbool.h>
+/*
+** test.c for testr in /home/alex-odet/work/sudoku/PREMIERE PARTIE/dobleint
+** 
+** Made by Alexandre Odet
+** Login   <alex-odet@epitech.net>
+** 
+** Started on  Sun Mar  2 15:16:18 2014 Alexandre Odet
+** Last update Sun Mar  2 15:23:16 2014 Alexandre Odet
+*/
 
 #include "sudoku.h"
 
-// Fonction d'affichage
 
 char    *fill_map(char *str)
 {
@@ -48,6 +53,7 @@ int	absentSurLigne(int k, int **grille, int i)
 {
   int	j;
 
+  printf("AbsentSurligne : k = %d\n", k);
   j = 0;
   while (j < 9)
     if (grille[i][j++] == k)
@@ -59,7 +65,8 @@ int	absentSurColonne(int k, int **grille, int j)
 {
   int	i;
 
-i = 0;
+  printf("AbsentSurColonne : k = %d\n", k);
+  i = 0;
   while (i < 9)
     if (grille[i++][j] == k)
       return (0);
@@ -73,6 +80,7 @@ int	absentSurBloc(int k, int **grille, int i, int j)
   int	_i;
   int	_j;
 
+  printf("AbsentSurBloc : k = %d\n", k);
   _i = i-(i%3);
   _j = j-(j%3);
   i = _i;
@@ -109,7 +117,6 @@ int	estValide(int **grille, int position)
 	  && absentSurBloc(k,grille,i,j))
         {
 	  grille[i][j] = k;
-
 	  if ( estValide (grille, position+1) )
 	    return (1);
         }
