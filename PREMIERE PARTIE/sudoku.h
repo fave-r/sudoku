@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Fri Feb 28 20:46:48 2014 romaric
-** Last update Sun Mar  2 01:46:32 2014 romaric
+** Last update Sun Mar  2 02:34:29 2014 Alexandre Odet
 */
 
 #ifndef __SUDOKU__
@@ -28,18 +28,18 @@ typedef struct  s_word
 int     xopen(const char *pathname, int flags);
 ssize_t xread(int fd, void *buf, size_t count);
 void    *xmalloc(size_t n);
-char	*epur_str(char *str);
 void    my_loop(int fd);
 int     doble(int x, int y);
-int     online(char nbr, char *str, int x);
-int     oncolumn(char nbr, char *str, int j);
-int     onsquare(char nbr, char *str, int i, int j);
-int	good(char *str, int where);
+int     online(int nbr, int *str, int x);
+int     oncolumn(int nbr, int *str, int j);
+int     onsquare(int nbr, int *str, int i, int j);
+int	good(int *str, int where);
 char	*fill_map(char *str);
-int     estValide(char *grille, int position);
+int     estValide(int *grille, int position);
 int     absentSurBloc(int k, char *grille, int i, int j);
 int     absentSurColonne(int k, char *grille, int j);
 int     absentSurLigne(int k, char *grille, int i);
 int     doble(int x, int y);
+int	*epur_str(char *str);
 
 #endif

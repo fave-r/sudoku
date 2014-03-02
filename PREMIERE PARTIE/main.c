@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 09:34:03 2014 romaric
-** Last update Sun Mar  2 01:52:59 2014 romaric
+** Last update Sun Mar  2 02:36:22 2014 Alexandre Odet
 */
 
 #include "sudoku.h"
@@ -20,7 +20,7 @@ void	my_loop(int fd)
 {
   char	buffer[BUFF_SIZE];
   char	*str;
-  char	*new;
+  int	*new;
   int	i;
 
   i = -1;
@@ -29,7 +29,7 @@ void	my_loop(int fd)
     strncpy(str, buffer, strlen(buffer));
   fill_map(str);
   if((new = epur_str(str)))
-    if (estValide(new, 0))
+    if (good(new, 0))
       while (++i <= 81)
       printf("%d", new[i]);
 }

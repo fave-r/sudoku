@@ -5,12 +5,12 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 11:29:26 2014 romaric
-** Last update Sun Mar  2 00:03:05 2014 romaric
+** Last update Sun Mar  2 02:33:47 2014 Alexandre Odet
 */
 
 #include "sudoku.h"
 
-int	online(char nbr, char *str, int x)
+int	online(int nbr, int *str, int x)
 {
   int	i;
 
@@ -23,20 +23,20 @@ int	online(char nbr, char *str, int x)
   return (1);
 }
 
-int	oncolumn(char nbr, char *str, int j)
+int	oncolumn(int nbr, int *str, int y)
 {
   int	i;
 
   i = -1;
   while (++i < 9)
     {
-      if (str[doble(i,j)] == nbr)
+      if (str[doble(i,y)] == nbr)
 	return (0);
     }
   return (1);
 }
 
-int	onsquare(char nbr, char *str, int i, int j)
+int	onsquare(int nbr, int *str, int i, int j)
 {
   int	x = i - (i % 3);
   int	y = j - (j % 3);

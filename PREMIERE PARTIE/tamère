@@ -1,4 +1,0 @@
-Checker toute la ligne et stocker dans tableau (de char/int) les nombres qu'il y'a déjà pour ne pas traiter de cas inutiles.
-
-S'il y'a plusieurs possibilités (C'est possible ?!) Liste chaînée avec tableau de char/int pour chaque poss.
-
