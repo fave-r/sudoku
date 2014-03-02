@@ -5,14 +5,14 @@
 ## Login   <alex-odet@epitech.net>
 ##
 ## Started on  Sat Mar  1 14:41:33 2014 Alexandre Odet
-## Last update Sun Mar  2 21:08:44 2014 Alexandre Odet
+## Last update Sun Mar  2 22:26:57 2014 romaric
 ##
 
 NAME=	SDL_TEST
 
 CC=	clang
 
-SRC=	main.c
+SRC=	m.c
 
 T=	*~
 
