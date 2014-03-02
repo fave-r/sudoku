@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 09:34:03 2014 romaric
-** Last update Sun Mar  2 12:47:38 2014 Alexandre Odet
+** Last update Sun Mar  2 22:15:29 2014 romaric
 */
 
 #include "sudoku.h"
