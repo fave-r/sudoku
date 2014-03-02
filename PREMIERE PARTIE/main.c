@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 09:34:03 2014 romaric
-** Last update Sun Mar  2 02:36:22 2014 Alexandre Odet
+** Last update Sun Mar  2 03:21:51 2014 romaric
 */
 
 #include "sudoku.h"
@@ -29,7 +29,11 @@ void	my_loop(int fd)
     strncpy(str, buffer, strlen(buffer));
   fill_map(str);
   if((new = epur_str(str)))
-    if (good(new, 0))
+    if (estValide(new, 0))
       while (++i <= 81)
-      printf("%d", new[i]);
+	{
+	  printf("\n%d\t", new[i]);
+	  if (i % 9 == 0)
+	    printf("\n");
+	}
 }
