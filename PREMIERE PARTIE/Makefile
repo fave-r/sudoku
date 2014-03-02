@@ -5,29 +5,29 @@
 ## Login   <fave_r@epitech.net>
 ##
 ## Started on  Fri Feb 28 20:51:16 2014 romaric
-## Last update Sun Mar  2 03:04:11 2014 romaric
+## Last update Sun Mar  2 17:47:19 2014 romaric
 ##
 
-CC=		clang
+CC=		gcc
 
 RM=		rm -f
 
-CFLAGS=		-Wextra -Wall -Werror -ggdb3 -g3
+CFLAGS=		-Wextra -Wall -Werror -Ofast
 
 NAME=		sudoki-bi
 
 SRCS=		xfunction.c \
 		main.c \
-		aux.c \
 		test.c \
-		epur_str.c
+		doble.c \
+		auxcalc.c
 
 OBJS=		$(SRCS:.c=.o)
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-		$(CC) $(OBJS) -o $(NAME) $(LDFLAGS) -lm
+		$(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
 
 clean:
 		$(RM) $(OBJS)
