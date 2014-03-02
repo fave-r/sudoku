@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Fri Feb 28 20:45:38 2014 romaric
-** Last update Sun Mar  2 18:28:27 2014 Alexandre Odet
+** Last update Sun Mar  2 23:27:35 2014 romaric
 */
 
 #include "sudoku.h"
@@ -31,7 +31,7 @@ ssize_t	xread(int fd, void *buf, size_t count)
   if (len == -1)
     {
       fprintf(stderr, "read fail.\n");
-      return (0);
+      exit(EXIT_FAILURE);
     }
   return (len);
 }
