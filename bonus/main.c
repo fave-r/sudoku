@@ -1,11 +1,11 @@
 /*
 ** main.c for main in /home/alex-odet/work/sudoku/bonus
-** 
+**
 ** Made by Alexandre Odet
 ** Login   <alex-odet@epitech.net>
-** 
+**
 ** Started on  Sun Mar  2 21:08:58 2014 Alexandre Odet
-** Last update Sun Mar  2 21:47:11 2014 Alexandre Odet
+** Last update Sun Mar  2 21:53:38 2014 romaric
 */
 
 #include "struct.h"
