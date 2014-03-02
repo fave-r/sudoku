@@ -5,12 +5,10 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 09:34:03 2014 romaric
-** Last update Sun Mar  2 18:04:58 2014 Alexandre Odet
+** Last update Sun Mar  2 22:18:05 2014 romaric
 */
 
 #include "sudoku.h"
-
-void	print_tab(int **map);
 
 int	main()
 {
