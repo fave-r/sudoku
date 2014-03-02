@@ -1,102 +1,14 @@
 /*
 ** test.c for testr in /home/alex-odet/work/sudoku/PREMIERE PARTIE/dobleint
-** 
+**
 ** Made by Alexandre Odet
 ** Login   <alex-odet@epitech.net>
-** 
+**
 ** Started on  Sun Mar  2 15:16:18 2014 Alexandre Odet
-** Last update Sun Mar  2 15:23:16 2014 Alexandre Odet
+** Last update Sun Mar  2 16:58:43 2014 romaric
 */
 
 #include "sudoku.h"
-
-
-char    *fill_map(char *str)
-{
-  int   i;
-
-  i = 0;
-  while (str[i])
-    {
-      if (str[i] == ' ' && str[i + 1] == ' ')
-        str[i + 1] = '0';
-      i++;
-    }
-  return (str);
-}
-
-/*
-  char yy[10] = {0,1,2,
-		 3,4,5,
-		 7,8,9};
-
-  int x = 0;
-  int y = 0;
-
-  while(x < 3)
-    {
-      while(y < 3)
-	{
-	  printf("%d", yy[3 * x + y]);
-	  y++;
-	}
-      printf("\n");
-      x++;
-      y = 0;
-    }
-
-  printf("\n");
-  printf("\n");
-}
-*/
-int	absentSurLigne(int k, int **grille, int i)
-{
-  int	j;
-
-  printf("AbsentSurligne : k = %d\n", k);
-  j = 0;
-  while (j < 9)
-    if (grille[i][j++] == k)
-      return (0);
-  return (1);
-}
-
-int	absentSurColonne(int k, int **grille, int j)
-{
-  int	i;
-
-  printf("AbsentSurColonne : k = %d\n", k);
-  i = 0;
-  while (i < 9)
-    if (grille[i++][j] == k)
-      return (0);
-  return (1);
-}
-
-
-
-int	absentSurBloc(int k, int **grille, int i, int j)
-{
-  int	_i;
-  int	_j;
-
-  printf("AbsentSurBloc : k = %d\n", k);
-  _i = i-(i%3);
-  _j = j-(j%3);
-  i = _i;
-  while (i < _i+3)
-    {
-      j=_j;
-      while (j < _j+3)
-	{
-	  if (grille[i][j] == k)
-	    return (0);
-	  j++;
-	}
-      i++;
-    }
-  return (1);
-}
 
 int	estValide(int **grille, int position)
 {
@@ -107,29 +19,21 @@ int	estValide(int **grille, int position)
   k = 1;
   i = position / 9;
   j = position % 9;
-  if (position == 9*9)
+  if (position == 9 * 9)
     return (1);
   if (grille[i][j] != 0)
-    return estValide(grille, position+1);
+    return (estValide(grille, position + 1));
   while (k <= 9)
     {
-      if (absentSurLigne(k,grille,i) && absentSurColonne(k,grille,j)
-	  && absentSurBloc(k,grille,i,j))
+      if (absentSurLigne(k, grille, i) && absentSurColonne(k, grille, j)
+	&& absentSurBloc(k, grille, i, j))
         {
 	  grille[i][j] = k;
-	  if ( estValide (grille, position+1) )
+	  if (estValide(grille, position + 1))
 	    return (1);
         }
       k++;
     }
   grille[i][j] = 0;
   return (0);
-}
-
-int     doble(int x, int y)
-{
-  int   len;
-
-  len = (9 * y + x);
-  return(len);
 }

@@ -5,7 +5,7 @@
 ** Login   <fave_r@epitech.net>
 **
 ** Started on  Sat Mar  1 12:45:52 2014 romaric
-** Last update Sun Mar  2 02:32:38 2014 Alexandre Odet
+** Last update Sun Mar  2 00:25:03 2014 romaric
 */
 
 #include "sudoku.h"
@@ -24,7 +24,7 @@ char	*fill_map(char *str)
   return (str);
 }
 
-int	good(int *str, int where)
+int	good(char *str, int where)
 {
   int	x;
   int	y;
@@ -44,10 +44,7 @@ int	good(int *str, int where)
   
       while (i <= 9)
 	{
-	  if ((online(i + '0',str, x)) && (oncolumn(i + '0',str, y))
-	      && (onsquare(i + '0',str, x, y)))
-	    {
-	      str[doble(x, y)] = i + '0';
+	  if ((online(i + '0',str, x)) && (oncolumn(i + '0',str y)] = i + '0';
 	      if (good(str, where + 1))
 		return (1);
 	    }
@@ -56,7 +53,10 @@ int	good(int *str, int where)
       str[doble(x,y)] = 0;
       
     }
-  return (0);  
+  printf("%s", str);
+
+  return (0);
+  
 }
 
 int	doble(int x, int y)
